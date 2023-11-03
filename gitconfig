@@ -1,0 +1,16 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Tim Poulsen
+	email = tp@tackle.io
+[core]
+	excludesfile = /Users/timpoulsen/.gitignore
+[pager]
+	branch = false
+[alias]
+	u = diff --minimal -w --ignore-blank-lines
+	# branchdelete = "!f(){ git branch -d \"$1\" && git push origin --delete \"$1\"; };f"
+[pull]
+	rebase = true
+[diff]
+	colorMoved = zebra

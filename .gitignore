@@ -1,0 +1,32 @@
+# Tackle specific
+tmp/
+Makefile
+.env
+.env.production*
+.pylintrc
+sentry.creds
+.pytest_cache/
+
+# pyenv
+.python-version
+
+# my custom scripts added to the API repo
+z_tims_scripts/
+
+# Node
+npm-debug.log
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# WebStorm
+.idea/
+
+# direnv
+.envrc
+
+# Other
+.vscode/
