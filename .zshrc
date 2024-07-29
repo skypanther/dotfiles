@@ -24,16 +24,17 @@ source $ZSH/oh-my-zsh.sh
 # My customizations
 unsetopt sharehistory
 
-alias src="echo 'reloading .zshrc' && source $HOME/.zshrc"
+alias awscli_login="echo 'RUNNING:saml2aws login --profile default --skip-prompt' && saml2aws login --profile default --skip-prompt"
 alias gcdu="git checkout main && git pull origin main && git submodule update --init --recursive"
+alias gdiffmain="git log --oneline --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative main..dev"
+alias gitchurn="git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort -n"
 alias gsub="git submodule update --init --recursive"
+alias src="echo 'reloading shell environment' && source $HOME/.zprofile && source $HOME/.zshrc"
+
 # git delete both local and remote branch
 gitbranchdelete() {
 	git branch -D $1 && git push origin --delete $1
 }
-alias gitchurn="git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort -n"
-
-alias sshtacklecas='ssh -i "~/.ssh/rds-access-ec2-key.pem" ec2-user@54.70.107.6'
 alias mailchimp='oathtool --totp --base32 5RIICDM2QOUT5GUM | pbcopy'
 
 # required for upstream-api because I installed OpenSSL with Homebrew, so pointing to built-ins here
